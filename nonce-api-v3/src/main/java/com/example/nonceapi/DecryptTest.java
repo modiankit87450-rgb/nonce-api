@@ -39,13 +39,10 @@ public class DecryptTest {
                 Base64.getDecoder().decode(encryptedKey)
         );
 
-        // STEP 2: Base64 string ko actual AES key me convert karo
+        // STEP 2: Base64 string ko actual AES key me convert
         byte[] aesKeyBytes = Base64.getDecoder().decode(new String(decryptedKey));
 
-
-        // ============================
-        // STEP 3: AES se NONCE decrypt karo
-        // ============================
+        // STEP 3: AES se NONCE decrypt
 
         SecretKey aesKey = new SecretKeySpec(aesKeyBytes, "AES");
 

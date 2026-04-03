@@ -13,23 +13,17 @@ public class NonceEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String deviceId;
+
+    @Column(nullable = false)
+    private String appId;
 
     @Column(nullable = false, length = 512)
     private String nonceHash;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
-
-    @Column(name = "app_id", nullable = false)
-    private String appId;
-
-    @Column(nullable = false)
-    private LocalDateTime expiresAt;
-
-    @Column(nullable = false)
-    private Boolean used;
 
     private String xRequestId;
 
